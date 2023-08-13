@@ -23,8 +23,8 @@ public class MessageRestController {
 
     @PostMapping("/send-message")
     public ResponseEntity<?> sendMessage(Message message) {
-        this.webSocketService.notifyFrontend(message.getMessageContent());
-        return ResponseEntity.status(HttpStatus.OK).body(null);
+        this.webSocketService.notifyToFrontend(message);
+        return ResponseEntity.status(HttpStatus.OK).body(message);
     }
 
     @MessageMapping("/message")

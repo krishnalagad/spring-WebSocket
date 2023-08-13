@@ -1,5 +1,6 @@
 package com.learnspring.websocket.service;
 
+import com.learnspring.websocket.dto.Message;
 import com.learnspring.websocket.dto.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -15,5 +16,11 @@ public class WebSocketService {
         ResponseMessage response = new ResponseMessage(message);
 
         this.simpMessagingTemplate.convertAndSend("/topic/messages", response);
+    }
+
+    public void notifyToFrontend(Message message) {
+//        ResponseMessage response = new ResponseMessage(message);
+
+        this.simpMessagingTemplate.convertAndSend("/topic/return-to", message);
     }
 }

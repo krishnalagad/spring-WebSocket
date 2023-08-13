@@ -33,6 +33,9 @@ function showMessage(message) {
 $(document).ready((e) => {
   $("#login").click(() => {
     let name = $("#name-value").val();
+    // if (inputValue === "") {
+    //   name = "ADMIN";
+    // }
     localStorage.setItem("name", name);
     $("#name-title").html(`Welcome, <b> ${name} </b>`);
     connect();

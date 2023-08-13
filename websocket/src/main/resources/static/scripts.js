@@ -3,7 +3,7 @@ var stompClient = null;
 function sendMessage() {
   let jsonOb = {
     name: localStorage.getItem("name"),
-    content: $("#message-value").val(),
+    messageContent: $("#message-value").val(),
   };
 
   stompClient.send("/app/message", {}, JSON.stringify(jsonOb));

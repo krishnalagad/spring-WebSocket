@@ -31,7 +31,7 @@ public class MessageRestController {
     @SendTo("/topic/return-to")
     public Message getContent(@RequestBody Message message) {
         this.logger.info("Message object received: {}", message);
-        
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

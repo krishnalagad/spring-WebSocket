@@ -12,16 +12,30 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     // WebSocketMessageBrokerConfigurer is interface in Spring Framework that allows you to configure various aspects of
     // WebSocket message handling
 
+//    @Override
+//    public void configureMessageBroker(final MessageBrokerRegistry registry) {
+////        WebSocketMessageBrokerConfigurer.super.configureMessageBroker(registry);
+//        registry.enableSimpleBroker("/topic");
+//        registry.setApplicationDestinationPrefixes("/ws");
+//    }
+//
+//    @Override
+//    public void registerStompEndpoints(final StompEndpointRegistry registry) {
+////        WebSocketMessageBrokerConfigurer.super.registerStompEndpoints(registry);
+//        registry.addEndpoint("/our-websocket").withSockJS();
+//    }
+
+
     @Override
-    public void configureMessageBroker(final MessageBrokerRegistry registry) {
-//        WebSocketMessageBrokerConfigurer.super.configureMessageBroker(registry);
-        registry.enableSimpleBroker("/topic");
-        registry.setApplicationDestinationPrefixes("/ws");
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+//        WebSocketMessageBrokerConfigurer.super.registerStompEndpoints(registry);
+        registry.addEndpoint("server1").withSockJS();
     }
 
     @Override
-    public void registerStompEndpoints(final StompEndpointRegistry registry) {
-//        WebSocketMessageBrokerConfigurer.super.registerStompEndpoints(registry);
-        registry.addEndpoint("/our-websocket").withSockJS();
+    public void configureMessageBroker(MessageBrokerRegistry registry) {
+//        WebSocketMessageBrokerConfigurer.super.configureMessageBroker(registry);
+        registry.enableSimpleBroker("/topic");
+        registry.setApplicationDestinationPrefixes("/app");
     }
 }

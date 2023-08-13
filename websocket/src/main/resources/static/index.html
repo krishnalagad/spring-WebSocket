@@ -16,16 +16,54 @@
   </head>
 
   <body>
-    <div class="bg-primary" name="name-form">
+    <div id="name-form" class="bg-primary d-flex align-items-center">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4 offset-md-4">
-            <input
-              type="text"
-              id="name-value"
-              placeholder="Enter your name"
-              autofocus
-            />
+            <div class="input-group">
+              <input
+                type="text"
+                id="name-value"
+                placeholder="Enter your name"
+                autofocus
+                class="form-control"
+              />
+
+              <div class="input-group-append">
+                <button class="btn btn-dark" id="login">Enter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="chat-room" class="d-none">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    id="message-value"
+                    placeholder="Type here ..."
+                    autofocus
+                    class="form-control"
+                  />
+
+                  <div class="input-group-append">
+                    <button class="btn btn-dark" id="send-btn">Send</button>
+                    <button class="btn btn-dark" id="logout">Logout</button>
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                  <table id="message-container-table"></table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

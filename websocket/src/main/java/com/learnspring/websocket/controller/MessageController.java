@@ -12,12 +12,12 @@ import org.springframework.web.util.HtmlUtils;
 @Controller
 public class MessageController {
 
-    @MessageMapping("/message")
-    @SendTo("/topic/messages")
-    public ResponseEntity<ResponseMessage> getMessage(final Message message) throws InterruptedException {
-        System.out.println(message.getMessageContent());
-        Thread.sleep(1000);
-        return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(
-                HtmlUtils.htmlEscape(message.getMessageContent())));
-    }
+//    @MessageMapping("/message")
+//    @SendTo("/topic/messages")
+//    public ResponseEntity<ResponseMessage> getMessage(final Message message) throws InterruptedException {
+//        System.out.println(message.getMessageContent());
+//        Thread.sleep(1000);
+//        return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(
+//                HtmlUtils.htmlEscape(message.getMessageContent())));
+//    }
 }

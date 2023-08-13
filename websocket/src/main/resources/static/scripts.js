@@ -34,11 +34,22 @@ $(document).ready((e) => {
   $("#login").click(() => {
     let name = $("#name-value").val();
     localStorage.setItem("name", name);
+    $("#name-title").html(`Welcome, <b> ${name} </b>`);
     connect();
   });
 
   $("#send-btn").click(() => {
     sendMessage();
+    $("#message-value").innerHTML = "";
+  });
+
+  $("#logout").click(() => {
+    localStorage.removeItem("name");
+    if (stompClient !== null) {
+      stompClient.disconnect();
+      $("#chat-room").addClass("d-none");
+      $("#name-form").removeClass("d-none");
+    }
   });
 });
 

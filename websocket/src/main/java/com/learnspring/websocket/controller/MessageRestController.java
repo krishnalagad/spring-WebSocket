@@ -30,7 +30,7 @@ public class MessageRestController {
         return ResponseEntity.status(HttpStatus.OK).body(message);
     }
 
-    @GetMapping("/")
+    @GetMapping("/test")
     public String testApi() {
         return "This is testing API";
     }
